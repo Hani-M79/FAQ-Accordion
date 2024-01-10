@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "work-sans";
+  src: url("./assets/fonts/static/WorkSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "work-sans-bold";
+  src: url("./assets/fonts/static/WorkSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: "work-sans-semi-bold";
+  src: url("./assets/fonts/static/WorkSans-SemiBold.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("./assets/images/background-pattern-desktop.svg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-color: hsl(275, 100%, 97%);
+  font-family: "work-sans";
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.title {
+  color: hsl(292, 42%, 14%);
+  font-size: 2.8rem;
+  font-weight: bolder;
+  font-family: "work-sans-bold";
+}
+
+.icon-star {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.faq-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 0;
+}
+
+.faq-inner-container {
+  width: 40%;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.8rem;
+  padding: 2rem 1.6rem;
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.q-and-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.question {
+  color: hsl(292, 42%, 14%);
+  font-family: "work-sans-semi-bold";
+  cursor: pointer;
+}
+
+.question:hover {
+  color: hsl(292, 16%, 49%);
+}
+
+.answer {
+  color: hsl(292, 16%, 49%);
+  font-size: 1rem;
+  padding: 0.4rem;
+  visibility: hidden;
+
+  max-height: 0;
+  transition: max-height 0.8s ease;
+}
+
+.answer.active {
+  max-height: 20rem;
+}
+
+.separator {
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 0.1rem solid hsla(292, 11%, 60%, 0.205);
+}
+
+/* Responsive */
+@media (max-width: 540px) {
+  .faq-inner-container {
+    width: 85%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .q-and-icon {
+    gap: 1rem;
+  }
+
+  .answer,
+  .question {
+    line-height: 1.5;
+    font-size: 0.9rem;
+  }
+}
